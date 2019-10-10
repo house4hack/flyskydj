@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+		<link rel="stylesheet" href="css/reveal-embed-video.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="images/front2.jpg" data-background-size="stretch" >
+					<h3 style="color: #003CFF;">Edge Computing at the Edge of the World - PyConZA'19</h3>
+				</section>
+				<section>
+						<h3>whoami</h3>
+						
+						<ul>
+							<li>Schalk Heunis</li>
+							<li>@schalkheunis</li>
+							<li>Head of Big Data, AI and RPA @ Telco</li>
+							<li>Founder @ House4Hack</li>
+						</ul>
+		
+				</section>
+	
+			
+				<section data-background-video="images/intro2.mp4">
+					
+				</section>
+				<section data-background-video="images/concept.mp4"> 
+					
+				</section>
+
+				<section>
+					<h3>Topics</h3>
+					<ul>
+						<li><u>Circuit Python</u></li>
+						<li>Automatic Music Categorization</li>
+						<li>RL Music Recommendations</li>
+					</ul>
+
+
+				</section>
+				
+
+				<section>
+					<section data-background-image="images/telemetry_1.png" data-background-size="contain"></section>
+					<section data-background-image="images/telemetry_2.png" data-background-size="contain"></section>
+					<section data-background-image="images/telemetry_3.png" data-background-size="contain"></section>
+					<section data-background-image="images/telemetry_4.png" data-background-size="contain">
+						<h3 class="fragment fade-in" style="color: #003CFF;background: #f0f0f0;">Circuit Python</h3>
+					</section>
+
+
+				</section>
+
+				<section>
+					<section data-background-iframe="http://localhost:8888/notebooks/flysky_vario/nb/pycon_circuitpython.ipynb" data-background-interactive data-video="top-right">
+						<img  style="border:none" class="fragment fade-out" data-src="images/circuitpython.png" alt="Down arrow">
+					</section>
+					<section data-background-video="images/circuitpython_demo.mp4" data-background-size="contain">
+					
+					</section>
+					<section data-background-image="images/circuitpython-ss1.png" data-background-size="contain"></section>
+					<section data-background-image="images/circuitpython-ss2.png" data-background-size="contain"></section>
+				</section>
+				<section>
+						<h3>Reading Altitude</h3>
+						<pre><code class="python">
+import adafruit_bmp280
+i2c = busio.I2C(board.SCL, board.SDA)
+sensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c, address=118)
+sensor.sea_level_pressure = 1013.25
+print(sensor.altitude)
+			</code></pre>
+				</section>
+
+				<section>
+					<h3>Topics</h3>
+					<ul>
+						<li>Circuit Python</li>
+						<li><u>Automatic Music Categorization</u></li>
+						<li>RL Music Recommendations</li>
+					</ul>
+				</section>
+
+				<section>
+					<section data-background-image="images/telemetry_5.png" data-background-size="contain"></section>
+					<section data-background-image="images/telemetry_6.png" data-background-size="contain"></section>
+					<section data-background-image="images/telemetry_7.png" data-background-size="contain"></section>
+
+
+				</section>
+				<section data-background-image="images/paper.png" data-background-size="100%" data-background-size="contain"></section>
+
+				<section>
+					<h3>LibRosa</h3>
+					<ul>
+
+						<li>https://librosa.github.io/librosa/</li>
+						<li>LibROSA is a python package for music and audio analysis. </li>	
+						<li>It provides the building blocks necessary to create music information retrieval systems.</li>
+					</ul>
+
+				</section>
+				
+
+
+				<section data-background-video="images/dangerzone_mel.mp4" data-background-size="contain">
+					
+				</section>
+
+				<section data-background-video="images/berlin_mel.mp4" data-background-size="contain">
+					
+				</section>
+				<section>
+					<section data-background-iframe="http://localhost:8888/notebooks/flysky_vario/nb/MelSpectograms.ipynb" data-background-interactive>
+						
+					</section>
+					<section data-background-image="images/mel-ss1.png" data-background-size="contain"></section>
+					<section data-background-image="images/mel-ss2.png" data-background-size="contain"></section>
+				</section>
+
+				<section >
+					<h3>VGG16</h3>
+					<img  style="border:none"  data-src="images/vgg16_mel.png" >
+				</section>
+				<section>
+					<section data-background-iframe="http://localhost:8888/notebooks/flysky_vario/nb/Convnets.ipynb" data-background-interactive>
+						
+					</section>
+					<section data-background-image="images/vgg16-ss1.png" data-background-size="contain"></section>
+					<section data-background-image="images/vgg16-ss2.png" data-background-size="contain"></section>
+				</section>
+	
+
+				<section >
+						<h3>Hierarchical Clustering</h3>
+						<p>Euclidean distance / Ward linkage</p>
+						<img  style="border:none"  data-src="images/dendrogram.png" onclick="window.open(this.src)">
+				</section>	
+				<section>
+					<section data-background-iframe="http://localhost:8888/notebooks/flysky_vario/nb/Hierarchical.ipynb" data-background-interactive>
+						
+					</section>
+					<section data-background-image="images/hierarchical-ss.png" data-background-size="contain"></section>
+
+				</section>
+
+				<section>
+					<h3>Topics</h3>
+					<ul>
+						<li>Circuit Python</li>
+						<li>Automatic Music Categorization</li>
+						<li><u>RL Music Recommendations</u></li>
+					</ul>
+				</section>
+
+				<section>
+					<section data-background-image="images/telemetry_8.png" data-background-size="contain"></section>
+					<section data-background-image="images/telemetry_9.png" data-background-size="contain"></section>
+				</section>
+
+				<section>
+					<h3>Feature Engineering</h3>
+					<ul>
+						<li>Use CRRC Sim </li>
+						<li>Connect RC Transmitter</li>
+						<li>Hack to produce JSON output of telemetry</li>
+					</ul>
+				</section>
+
+				<section data-background-video="images/features.mp4"></section>
+				<section>
+						<section data-background-image="images/telemetry_10.png" data-background-size="contain"></section>
+						<section data-background-image="images/telemetry_11.png" data-background-size="contain"></section>
+						
+				</section>
+				<section>
+					<h3>Multi-arm bandit</h3>
+					<ul>
+						<li>Start with pure explore</li>
+						<li>Balance explore and exploit, based on evidence</li>
+						<li>Never stop exploring</li>
+					</ul>
+				</section>	
+				<section>
+					<h3>Epsilon-Greedy</h3>
+					<pre><code class="python">
+epsilon = getEpsilon(evidenceCount)
+
+do_explore = random.random() < epsilon
+
+if do_explore:
+	probs = [1/classCount] * classCount
+else:
+	probs = classifier.classify(make_features())
+
+					</code></pre>
+				</section>
+				<section>
+					<h3>Other Strategies</h3>
+					<ul>
+						<li>UCB</li>
+						<li>Thompson Sampling</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Training</h3>
+					<img  style="border:none"  data-src="images/bayes.png" >
+					<ul>
+						<li>Binarize features (Bernouli Naive Bayes)</li>
+						<li>Folder counter</li>
+						<li>Feature counter by folder</li>
+					</ul>
+				</section>
+				
+
+				<section >
+						<h3>Experiment</h3>
+						<img  style="border:none" height="400" data-src="images/truth.png" >
+				</section>
+				<section >
+						<h3>From scratch</h3>
+						<img  style="border:none"  height="400" data-src="images/train.png" >
+				</section>
+				
+				<section data-background-video="images/eval.mp4">
+					<p class="fragment fade-in-then-out" style="color: #003CFF;">One round of training</p>
+				</section>
+				<section >
+						<h3>Hold Out</h3>
+						<img  style="border:none"  height="400" data-src="images/holdout.png" >
+				</section>
+
+				<section>
+						<h3>Packaged</h3>
+						<img  style="border:none"  height="400" data-src="images/tx.jpg" >
+				</section>
+
+				<section>
+						<h3>Topics</h3>
+						<ul>
+							<li>Circuit Python</li>
+							<li>Automatic Music Categorization</li>
+							<li>RL Music Recommendations</li>
+						</ul>
+				</section>
+				<section>
+						<h3>Future Work</h3>
+						<ul>
+							<li>Car version using GPS</li>
+							<li>Better Automatic Music Categorization</li>
+							<li>More flying</li>
+						</ul>
+				</section>
+				<section  >
+					<h3>Take-Aways</h3>
+					<ul>
+						<li>https://github.com/house4hack/flyskydj.git</li>
+						<li>https://circuitpython.org/</li>
+						<li>https://librosa.github.io/librosa/</li>
+						<li>https://github.com/bgalbraith/bandits</li>
+
+					</ul>
+				</section>
+
+				<section data-background-image="images/back.jpg" data-background-size="stretch" >
+					<h3>Questions?</h3>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'js/reveal-embed-video.js'}
+				]
+			});
+		</script>
+	</body>
+</html>

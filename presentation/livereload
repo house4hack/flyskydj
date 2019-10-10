@@ -1,0 +1,9 @@
+#!/anaconda/bin/python
+# Requires python-livereload package
+
+from livereload import Server, shell
+
+server = Server()
+server.watch('presentation')
+#server.watch('src/ts/', shell('tsc -p src/ts'))
+server.serve(root='presentation',port=35729,debug=True,open_url=True)
